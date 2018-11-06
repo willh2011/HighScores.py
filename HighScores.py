@@ -8,12 +8,22 @@ entries = 0
 playerEntry = ''
 scoreEntry = ''
 top3 = ''
+counter = 0
+highScore = 0
+highest = 0
 while entries < 5:
     playerEntry = input("What is the player's name?")
     players.append(playerEntry)
-    scoreEntry = input(f"What is {playerEntry} score? ")
+    scoreEntry = int(input(f"What is {playerEntry} score? "))
     scores.append(scoreEntry)
     entries += 1
+while counter < len(scores):
+    if scores[counter] > highScore:
+        highScore = scores[counter]
+        highest = counter
+    counter += 1
+print(f"High player's name is {players[highest]} and their high score is {scores[highest]}")
+
 # scoreEntry = [  3]
 # print(scoreEntry)
 
